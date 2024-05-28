@@ -1,2 +1,0 @@
-# Trabalhos
-TRABALHOS DE COMPUTAÇÃO
