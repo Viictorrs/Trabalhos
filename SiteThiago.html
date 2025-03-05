@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brendashow - Enquete</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #333;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .option {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        button {
+            background: #ff4b5c;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff1e40;
+        }
+        .vote-count {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Brendashow - Enquete</h1>
+    <div class="container">
+        <p>Vote na sua opção favorita!</p>
+        <div class="option">
+            <div>
+                <h2>Autonomia</h2>
+                <button onclick="vote('autonomia')">Votar</button>
+                <p class="vote-count" id="autonomia-votes">0 votos</p>
+            </div>
+            <div>
+                <h2>Função Social</h2>
+                <button onclick="vote('funcao_social')">Votar</button>
+                <p class="vote-count" id="funcao_social-votes">0 votos</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let votes = { autonomia: 0, funcao_social: 0 };
+
+        function vote(option) {
+            votes[option]++;
+            document.getElementById(option + '-votes').innerText = votes[option] + " votos";
+        }
+    </script>
+</body>
+</html>
